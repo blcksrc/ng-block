@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
+import { AuthModule } from './auth/auth.module';
 import { HomeComponent } from './pages/home.component';
 import { PageNotFoundComponent } from './pages/page-not-found.component';
 
@@ -15,7 +16,8 @@ import { PageNotFoundComponent } from './pages/page-not-found.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AuthModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
