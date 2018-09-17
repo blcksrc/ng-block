@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AuthModule } from './auth/auth.module';
 import { HomeComponent } from './pages/home.component';
+import { SearchComponent } from './pages/search.component';
 import { PageNotFoundComponent } from './pages/page-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    SearchComponent,
     PageNotFoundComponent,
   ],
   imports: [

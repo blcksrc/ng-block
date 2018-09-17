@@ -8,6 +8,9 @@ import { Component } from '@angular/core';
       <a routerLink="/home" routerLinkActive="active">
         Home
       </a>
+      <a routerLink="/search" routerLinkActive="active">
+        Search
+      </a>
       <a routerLink="/login" routerLinkActive="active">
         Login
       </a>
