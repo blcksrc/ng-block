@@ -8,6 +8,7 @@ import { AuthModule } from './auth/auth.module';
 import { HomeComponent } from './pages/home.component';
 import { SearchComponent } from './pages/search.component';
 import { PageNotFoundComponent } from './pages/page-not-found.component';
+import { UsersModule } from './users/users.module';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { PageNotFoundComponent } from './pages/page-not-found.component';
     BrowserModule,
     AuthModule,
     AppRoutingModule,
+    UsersModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
