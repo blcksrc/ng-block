@@ -4,11 +4,12 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
+import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
+
 import { HomeComponent } from './pages/home.component';
 import { SearchComponent } from './pages/search.component';
 import { PageNotFoundComponent } from './pages/page-not-found.component';
-import { UsersModule } from './users/users.module';
 
 @NgModule({
   declarations: [
@@ -19,9 +20,9 @@ import { UsersModule } from './users/users.module';
   ],
   imports: [
     BrowserModule,
+    UsersModule,
     AuthModule,
     AppRoutingModule,
-    UsersModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
