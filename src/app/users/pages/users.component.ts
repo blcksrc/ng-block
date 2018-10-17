@@ -16,24 +16,7 @@ import { USERS } from 'src/app/data/mock-users';
       </li>
     </ul>
 
-    <div *ngIf="selectedUser">
-      <h3>User Data | {{ selectedUser.name | uppercase }}</h3>
-      
-      <h4>User Details</h4>
-      <p>
-        <b>Id:</b> {{ selectedUser.id }}
-        <br>
-        <b>Name:</b> {{ selectedUser.name }}
-      </p>
-
-      <h4>Edit User Details</h4>
-      <p>
-        <label>Name:
-          <input [(ngModel)]="selectedUser.name" placeholder="name">
-        </label>
-      </p>
-
-    </div>
+    <blck-user-detail [user]="selectedUser"></blck-user-detail>
   `,
   styles: [
     `.selected { font-weight: bolder; text-decoration: underline; }`,
