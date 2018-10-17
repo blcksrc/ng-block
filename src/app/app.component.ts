@@ -21,7 +21,10 @@ import { Component } from '@angular/core';
         Signup
       </a>
     </nav>
+
     <router-outlet></router-outlet>
+
+    <blck-messages></blck-messages>
   `,
   styles: [
     `.active { font-weight: bolder; }`

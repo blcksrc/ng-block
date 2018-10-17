@@ -11,12 +11,15 @@ import { HomeComponent } from './pages/home.component';
 import { SearchComponent } from './pages/search.component';
 import { PageNotFoundComponent } from './pages/page-not-found.component';
 
+import { MessagesComponent } from './components/messages.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     SearchComponent,
     PageNotFoundComponent,
+    MessagesComponent,
   ],
   imports: [
     BrowserModule,

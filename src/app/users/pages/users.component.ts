@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { UserService } from 'src/app/services/user.service';
+
 import { User } from 'src/app/models/user';
-import { USERS } from 'src/app/data/mock-users';
 
 @Component({
   selector: 'blck-users',
@@ -25,12 +26,17 @@ import { USERS } from 'src/app/data/mock-users';
 })
 export class UsersComponent implements OnInit {
 
-  users = USERS;
+  users: User[];
   selectedUser: User;
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
+    this.getUsers()
+  }
+
+  getUsers(): void {
+    this.userService.getUsers().subscribe(users => this.users = users);
   }
 
   onSelect(user: User): void {
