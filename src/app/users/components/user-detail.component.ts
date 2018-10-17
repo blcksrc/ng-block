@@ -2,6 +2,11 @@ import { Component, OnInit, Input } from '@angular/core';
 
 import { User } from 'src/app/models/user';
 
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+import { UserService } from 'src/app/services/user.service';
+
+
 @Component({
   selector: 'blck-user-detail',
   template: `
@@ -22,17 +27,32 @@ import { User } from 'src/app/models/user';
         </label>
       </p>
 
+      <button (click)="goBack()">go back</button>
     </div>
   `,
   styles: []
 })
 export class UserDetailComponent implements OnInit {
 
-  @Input() user: User;
+  user: User;
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private userService: UserService,
+    private location: Location
+  ) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.getUser();
+  }
+  
+  getUser(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.userService.getUser(id)
+      .subscribe(user => this.user = user);
   }
 
+  goBack(): void {
+    this.location.back();
+  }
 }

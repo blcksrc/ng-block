@@ -10,14 +10,12 @@ import { User } from 'src/app/models/user';
     <h2>Users</h2>
 
     <ul>
-      <li *ngFor="let user of users"
-        (click)="onSelect(user)"
-        [class.selected]="user === selectedUser">
-        {{ user.id }} - {{ user.name }}
+      <li *ngFor="let user of users">
+        <a routerLink="/detail/{{ user.id }}">
+          {{ user.id }} - {{ user.name }}
+        </a>
       </li>
     </ul>
-
-    <blck-user-detail [user]="selectedUser"></blck-user-detail>
   `,
   styles: [
     `.selected { font-weight: bolder; text-decoration: underline; }`,
@@ -27,7 +25,6 @@ import { User } from 'src/app/models/user';
 export class UsersComponent implements OnInit {
 
   users: User[];
-  selectedUser: User;
 
   constructor(private userService: UserService) { }
 
@@ -38,9 +35,4 @@ export class UsersComponent implements OnInit {
   getUsers(): void {
     this.userService.getUsers().subscribe(users => this.users = users);
   }
-
-  onSelect(user: User): void {
-    this.selectedUser = user;
-  }
-
 }
