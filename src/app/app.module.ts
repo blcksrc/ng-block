@@ -1,7 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService }  from './data/in-memory-data.service';
+
 import { AppComponent } from './app.component';
+
 import { AppRoutingModule } from './app-routing.module';
 
 import { UsersModule } from './users/users.module';
@@ -23,6 +27,12 @@ import { MessagesComponent } from './components/messages.component';
   ],
   imports: [
     BrowserModule,
+    // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
+    // and returns simulated server responses.
+    // Remove it when a real server is ready to receive requests.
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false }
+    ),
     UsersModule,
     AuthModule,
     AppRoutingModule,

@@ -1,11 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
-
-import { User } from 'src/app/models/user';
+import { Component, OnInit } from '@angular/core';
 
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+
 import { UserService } from 'src/app/services/user.service';
 
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'blck-user-detail',
@@ -28,6 +28,7 @@ import { UserService } from 'src/app/services/user.service';
       </p>
 
       <button (click)="goBack()">go back</button>
+      <button (click)="save()">save</button>
     </div>
   `,
   styles: []
@@ -50,6 +51,11 @@ export class UserDetailComponent implements OnInit {
     const id = +this.route.snapshot.paramMap.get('id');
     this.userService.getUser(id)
       .subscribe(user => this.user = user);
+  }
+
+  save(): void {
+    this.userService.updateUser(this.user)
+      .subscribe(() => this.goBack());
   }
 
   goBack(): void {

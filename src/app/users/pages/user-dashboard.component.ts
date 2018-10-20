@@ -6,12 +6,15 @@ import { User } from 'src/app/models/user';
   selector: 'blck-user-dashboard',
   template: `
     <h2>User Dashboard</h2>
+
     <div>
       <a *ngFor="let user of users"
         routerLink="/detail/{{ user.id }}">
         {{user.name}}
       </a>
     </div>
+
+    <blck-user-search></blck-user-search>
   `,
   styles: []
 })
