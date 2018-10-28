@@ -4,7 +4,9 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
+import { ExperimentsModule } from './experiments/experiments.module';
 import { AuthModule } from './auth/auth.module';
+
 import { HomeComponent } from './pages/home.component';
 import { SearchComponent } from './pages/search.component';
 import { PageNotFoundComponent } from './pages/page-not-found.component';
@@ -18,6 +20,7 @@ import { PageNotFoundComponent } from './pages/page-not-found.component';
   ],
   imports: [
     BrowserModule,
+    ExperimentsModule,
     AuthModule,
     AppRoutingModule,
   ],

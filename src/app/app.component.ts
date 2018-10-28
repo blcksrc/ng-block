@@ -11,6 +11,12 @@ import { Component } from '@angular/core';
       <a routerLink="/search" routerLinkActive="active">
         Search
       </a>
+      <a routerLink="/experiments" routerLinkActive="active">
+        Experiments
+      </a>
+      <a routerLink="/about" routerLinkActive="active">
+        About
+      </a>
       <a routerLink="/login" routerLinkActive="active">
         Login
       </a>
