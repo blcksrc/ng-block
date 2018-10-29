@@ -5,6 +5,7 @@ import { AuthRoutingModule } from './auth-routing.module';
 
 import { LoginComponent } from './pages/login.component';
 import { SignupComponent } from './pages/signup.component';
+import { ForgotPasswordComponent } from './pages/forgot-password.component';
 
 @NgModule({
   imports: [
@@ -14,6 +15,7 @@ import { SignupComponent } from './pages/signup.component';
   declarations: [
     LoginComponent,
     SignupComponent,
+    ForgotPasswordComponent,
   ]
 })
 export class AuthModule { }

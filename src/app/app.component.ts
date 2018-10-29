@@ -21,7 +21,7 @@ import { Component } from '@angular/core';
         Login
       </a>
       <a routerLink="/signup" routerLinkActive="active">
-        Signup
+        Sign up
       </a>
     </nav>
     <router-outlet></router-outlet>
